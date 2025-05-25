@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Габриела Христова</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    .photo {
+      float: right;
+      margin-left: 2rem;
+      max-width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .skills span {
+      background: #f0f0f0;
+      padding: 6px 10px;
+      margin: 4px;
+      display: inline-block;
+      border-radius: 4px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Габриела Христова</h1>
+  <img src="profile.jpg" alt="Gabriela Hristova" class="photo" />
+  <p>💻 Мотивиран .NET разработчик с интерес към разработка на уеб приложения, C#, Razor Pages и системи като Umbraco. Стремя се да съчетавам практичност и визуална изчистеност в проектите си.</p>
+
+  <div class="section">
+    <h2>🧠 Технически умения</h2>
+    <div class="skills">
+      <span>C#</span>
+      <span>.NET 7</span>
+      <span>ASP.NET MVC</span>
+      <span>Entity Framework</span>
+      <span>SQLite</span>
+      <span>HTML5/CSS3</span>
+      <span>JavaScript</span>
+      <span>Umbraco CMS</span>
+      <span>Git & GitHub</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🎓 Образование</h2>
+    <p>Югозападен университет „Неофит Рилски“<br>Бакалавър по Информатика</p>
+  </div>
+
+  <div class="section">
+    <h2>💼 Професионален опит</h2>
+    <p><strong>Практически .NET проекти</strong><br>Разработени 4 проекта в GitHub, покриващи както конзолни приложения, така и уеб технологии.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Проекти</h2>
+    <ul>
+      <li><a href="https://github.com/yourusername/dotnet-portfolio/tree/main/Project1">🎓 Student Management Console App</a></li>
+      <li><a href="https://github.com/yourusername/dotnet-portfolio/tree/main/Project2">✅ Task Manager</a></li>
+      <li><a href="https://github.com/yourusername/dotnet-portfolio/tree/main/Project3">🧮 Calculator with History</a></li>
+      <li><a href="https://github.com/yourusername/dotnet-portfolio/tree/main/Project4">🌤️ Weather Forecast App</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📞 Контакти</h2>
+    <p>Email: example@mail.com<br>
+    GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+  </div>
+
+</body>
+</html>
