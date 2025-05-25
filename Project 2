@@ -1,0 +1,107 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+
+class TaskItem
+{
+    public string Title { get; set; }
+    public bool IsCompleted { get; set; }
+}
+
+class Program
+{
+    static List<TaskItem> tasks = new();
+
+    static void Main()
+    {
+        while (true)
+        {
+            Console.Clear();
+            PrintProgress();
+            Console.WriteLine(" Task Manager");
+            Console.WriteLine("1. Add task");
+            Console.WriteLine("2. List tasks");
+            Console.WriteLine("3. Complete task");
+            Console.WriteLine("4. Delete task");
+            Console.WriteLine("5. Exit");
+            Console.Write("Select: ");
+
+            switch (Console.ReadLine())
+            {
+                case "1": AddTask(); break;
+                case "2": ListTasks(); break;
+                case "3": CompleteTask(); break;
+                case "4": DeleteTask(); break;
+                case "5": return;
+                default: Console.WriteLine("❗ Invalid choice"); break;
+            }
+        }
+    }
+
+    static void AddTask()
+    {
+        Console.Write("Enter task title: ");
+        var title = Console.ReadLine();
+        tasks.Add(new TaskItem { Title = title });
+        Console.WriteLine(" Task added!");
+        Thread.Sleep(1000);
+    }
+
+    static void ListTasks()
+    {
+        Console.WriteLine(" All Tasks:");
+        for (int i = 0; i < tasks.Count; i++)
+        {
+            var t = tasks[i];
+            Console.WriteLine($"{i + 1}. [{(t.IsCompleted ? "✔" : " ")}] {t.Title}");
+        }
+        Console.WriteLine("\nPress any key...");
+        Console.ReadKey();
+    }
+
+    static void CompleteTask()
+    {
+        ListTasks();
+        Console.Write("Enter task number to complete: ");
+        if (int.TryParse(Console.ReadLine(), out int i) && i > 0 && i <= tasks.Count)
+        {
+            tasks[i - 1].IsCompleted = true;
+            Console.WriteLine(" Task marked as completed!");
+        }
+        else
+        {
+            Console.WriteLine(" Invalid task number.");
+        }
+        Thread.Sleep(1000);
+    }
+
+    static void DeleteTask()
+    {
+        ListTasks();
+        Console.Write("Enter task number to delete: ");
+        if (int.TryParse(Console.ReadLine(), out int i) && i > 0 && i <= tasks.Count)
+        {
+            tasks.RemoveAt(i - 1);
+            Console.WriteLine(" Task deleted.");
+        }
+        else
+        {
+            Console.WriteLine(" Invalid task number.");
+        }
+        Thread.Sleep(1000);
+    }
+
+    static void PrintProgress()
+    {
+        int total = tasks.Count;
+        int done = tasks.Count(t => t.IsCompleted);
+        int percent = total == 0 ? 0 : (int)((done / (double)total) * 100);
+
+        Console.Write("Progress: [");
+        int bars = percent / 10;
+        Console.Write(new string('#', bars));
+        Console.Write(new string('-', 10 - bars));
+        Console.WriteLine($"] {percent}%\n");
+    }
+}
