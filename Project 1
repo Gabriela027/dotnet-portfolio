@@ -22,7 +22,7 @@ namespace StudentManagement
 
             while (running)
             {
-                Console.WriteLine("\n📚 Student Management System");
+                Console.WriteLine("\n Student Management System");
                 Console.WriteLine("1. Add student");
                 Console.WriteLine("2. Show all students");
                 Console.WriteLine("3. Search student by name");
@@ -44,12 +44,12 @@ namespace StudentManagement
                         running = false;
                         break;
                     default:
-                        Console.WriteLine("❗ Invalid option.");
+                        Console.WriteLine("Invalid option.");
                         break;
                 }
             }
 
-            Console.WriteLine("👋 Program ended.");
+            Console.WriteLine("Program ended.");
         }
 
         static void AddStudent()
@@ -67,12 +67,12 @@ namespace StudentManagement
                 FacultyNumber = faculty
             });
 
-            Console.WriteLine("✅ Student added.");
+            Console.WriteLine(" Student added.");
         }
 
         static void ShowStudents()
         {
-            Console.WriteLine("\n📋 List of Students:");
+            Console.WriteLine(" List of Students:");
             foreach (var student in students)
             {
                 Console.WriteLine($"[{student.Id}] {student.FullName} ({student.FacultyNumber})");
@@ -88,7 +88,7 @@ namespace StudentManagement
 
             if (results.Count == 0)
             {
-                Console.WriteLine("🔍 No students found.");
+                Console.WriteLine(" No students found.");
                 return;
             }
 
